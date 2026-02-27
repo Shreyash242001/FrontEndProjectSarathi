@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap");
+
+/* ═══════════════════════════════════════════
+   Design Tokens — Dark (default)
+   ═══════════════════════════════════════════ */
+:root,
+[data-theme="dark"] {
+  --navy-900: #050d1a;
+  --navy-800: #0a1628;
+  --navy-700: #0f2240;
+  --navy-600: #152e54;
+  --navy-500: #1b3a68;
+  --navy-400: #2a5298;
+  --navy-300: #3d6db5;
+  --gold-500: #c9a84c;
+  --gold-400: #d4b95f;
+  --gold-300: #e0cb7a;
+  --gold-200: #ebd99a;
+  --white: #ffffff;
+  --white-90: rgba(255, 255, 255, 0.9);
+  --white-70: rgba(255, 255, 255, 0.7);
+  --white-50: rgba(255, 255, 255, 0.5);
+  --white-30: rgba(255, 255, 255, 0.3);
+  --white-20: rgba(255, 255, 255, 0.2);
+  --white-10: rgba(255, 255, 255, 0.1);
+  --white-05: rgba(255, 255, 255, 0.05);
+  --danger: #e74c3c;
+  --success: #27ae60;
+
+  /* Semantic tokens */
+  --bg-primary:    #050d1a;
+  --bg-secondary:  #0a1628;
+  --bg-card:       rgba(15, 34, 64, 0.5);
+  --bg-card-hover: rgba(15, 34, 64, 0.7);
+  --bg-input:      rgba(255, 255, 255, 0.03);
+  --bg-sidebar:    linear-gradient(180deg, #0a1628 0%, #081a36 50%, #0a1628 100%);
+  --bg-topbar:     rgba(10, 22, 40, 0.85);
+  --border-subtle: rgba(201, 168, 76, 0.06);
+  --border-input:  rgba(255, 255, 255, 0.08);
+  --text-primary:  #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted:    rgba(255, 255, 255, 0.5);
+  --text-faint:    rgba(255, 255, 255, 0.25);
+  --shadow-card:   0 8px 32px rgba(0, 0, 0, 0.25);
+
+  --font-display: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 16px 64px rgba(0, 0, 0, 0.35);
+  --shadow-gold: 0 4px 20px rgba(201, 168, 76, 0.3);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* ═══════════════════════════════════════════
+   Design Tokens — Light (Premium)
+   Warm ivory / cream palette with rich shadows
+   ═══════════════════════════════════════════ */
+[data-theme="light"] {
+  --navy-900: #f5f0e8;
+  --navy-800: #ece5d8;
+  --navy-700: #d4c9b8;
+  --navy-600: #8b7e6e;
+  --navy-500: #6b5f50;
+  --navy-400: #1a365d;
+  --navy-300: #1e4a8a;
+  --gold-500: #8b6914;
+  --gold-400: #a07a18;
+  --gold-300: #b8911e;
+  --gold-200: #d4aa2e;
+  --white: #1a202c;
+  --white-90: rgba(26, 32, 44, 0.9);
+  --white-70: rgba(26, 32, 44, 0.7);
+  --white-50: rgba(26, 32, 44, 0.5);
+  --white-30: rgba(26, 32, 44, 0.3);
+  --white-20: rgba(26, 32, 44, 0.2);
+  --white-10: rgba(26, 32, 44, 0.1);
+  --white-05: rgba(26, 32, 44, 0.05);
+  --danger: #c53030;
+  --success: #276749;
+
+  --bg-primary:    linear-gradient(170deg, #faf7f2 0%, #f5f0e8 40%, #ece5d8 100%);
+  --bg-secondary:  #fdfcf9;
+  --bg-card:       rgba(255, 253, 248, 0.75);
+  --bg-card-hover: rgba(255, 253, 248, 0.92);
+  --bg-input:      rgba(26, 32, 44, 0.02);
+  --bg-sidebar:    linear-gradient(180deg, #0c1b33 0%, #102240 30%, #0e1d38 60%, #0a1628 100%);
+  --bg-topbar:     rgba(253, 252, 249, 0.88);
+  --border-subtle: rgba(139, 105, 20, 0.08);
+  --border-input:  rgba(26, 32, 44, 0.1);
+  --text-primary:  #1a202c;
+  --text-secondary: #2d3748;
+  --text-muted:    #5a6577;
+  --text-faint:    #8b95a5;
+  --shadow-card:   0 4px 16px rgba(139, 105, 20, 0.06),
+                   0 12px 40px rgba(0, 0, 0, 0.05),
+                   0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--gold-400);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--gold-300);
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--navy-800);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--navy-500);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--navy-400);
+}
+
+/* ═══════════════════════════════════════════
+   Theme Toggle Button (shared)
+   ═══════════════════════════════════════════ */
+.theme-toggle {
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: rgba(201, 168, 76, 0.15);
+  border-color: rgba(201, 168, 76, 0.25);
+  transform: rotate(20deg) scale(1.1);
+}
+
+[data-theme="light"] .theme-toggle {
+  background: rgba(139, 105, 20, 0.06);
+  border-color: rgba(139, 105, 20, 0.1);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  background: rgba(139, 105, 20, 0.12);
+  border-color: rgba(139, 105, 20, 0.2);
+}

@@ -1,0 +1,283 @@
+I want to create an product tree for my application and it should follow the the same theam structure what i am using now it should look uniform in terms of font color code note i am having light mode dark mode in application so functionality is we have torpedo misille Amunation in this so when i am showing an torpedo missile and ammunation so i will share the json structure also to u what u have to do and for 1st time show the parent node after clicking on it show the childs of that and if they have child after clicking show there child make it very impresive if 3d product tree is possible with matching the uniformity and theam font and color code and this project is 32 crore so make it impresive
+
+1) on this api i will get the list of all  torpedo missile and ammunation then i will choose on of the neutral parameter from dropdown and populate the product tree of that neutral parameter so at 2nd point i will share the product tree api
+http://localhost:5203/neutral-parameters/getv
+    @GetMapping("/getv")
+    public ResponseEntity<List<NeutralParameterResponseDto>> getAllNeutralParametersVP() {
+        List<NeutralParameterResponseDto> neutralParameters = neutralParameterService.getAllNeutralParametersVP();
+        return ResponseEntity.ok(neutralParameters);
+    }
+
+
+[
+    {
+        "neutralParameterId": 34,
+        "id": 34,
+        "storeUid": "SM 39 M1B MOCKUP POST STRIKE/35472/008463",
+        "storeName": "SM 39 M1B MOCKUP POST STRIKE",
+        "serialNumber": null,
+        "storeTypeId": 3,
+        "storeType": "ParentStore",
+        "itemCode": null,
+        "noOfTubes": 0,
+        "assetTypeId": 1,
+        "assetTypeName": "Armament",
+        "explosiveness": true,
+        "baselineParameterAvailability": true,
+        "assetCategoryId": 3,
+        "assetCategoryName": "Missile",
+        "nsnNumber": "3856584657332",
+        "dcanNumber": "3437483645",
+        "astsNumber": "1234567890123",
+        "supplierId": 4,
+        "supplierName": "Lockheed Martin",
+        "stateOfProductId": 0,
+        "shelfLifeMonth": null,
+        "shelfLifeYear": 20.0,
+        "provisionalLifeMonth": null,
+        "provisionalLifeYear": null,
+        "operationalLifeMonth": null,
+        "operationalLifeYear": 10.0,
+        "extendableLifeMonth": null,
+        "extendableLifeYear": 10.0,
+        "isCategorization": null,
+        "categorizationId": 0,
+        "categorization": null,
+        "indigenised": false,
+        "procuredFrom": null,
+        "typeOfProcurement": "indian",
+        "indigenousPartNo": null,
+        "oemPartNo": "008463",
+        "ahspId": 3,
+        "hazardLevel": 5.0,
+        "compatibilityGroup": "9937",
+        "picture": 0,
+        "mqap": "2323",
+        "qap": "2334",
+        "specification": "",
+        "acceptanceTestProcedure": "23434",
+        "technicalDocument": "8844",
+        "policyLetter": "5463",
+        "standardItem": true,
+        "parentNeutralParameterIds": [],
+        "parentNeutralParameterStoreNames": [],
+        "assetSubCategory": null,
+        "assetSubCategoryId": 0,
+        "pdiDocument": "8765",
+        "drawingNumber": "35472",
+        "revisionNumber": 2343,
+        "componentNameId": 6,
+        "componentName": "Battery",
+        "componentType": null,
+        "checklistRefNo": "12",
+        "inAidComponentId": [],
+        "inAidComponentName": [],
+        "storeComponentTypeId": 0,
+        "storeComponentType": null,
+        "obsolete": false,
+        "equipmentTypeIds": [],
+        "equipmentTypeName": [],
+        "leApplicable": true,
+        "laApplicable": true,
+        "armamentUsedId": [],
+        "armamentUsed": [],
+        "authorityName": "DGAQA",
+        "neuralParameterForOrdnanceGunsFittedOnBoardShip": null,
+        "packageDetailsList": [],
+        "maxEFC": 0.0,
+        "maxNoOfRounds": 0,
+        "singleEfcconstant": 3.0,
+        "rapidEfcconstant": 2.0,
+        "neutralParameterAmmunitionForMultiComponent": null,
+        "neuralParameterForOrdnanceDimensionAndWtOfRocketsAndChaffLaunchers": null,
+        "neuralParameterForOrdnanceAntiSubmarineRocketLaunchers": null,
+        "neutralParameterPlanDiameterGaugesPlugBoreAndLowLimitForProvision": null,
+        "NeuralParameterForOrdnanceGunsFittedOnBoardShip": null,
+        "neutralParameterGaugingPosAndWtOfGunWithBarrelAndmachine": null
+    }
+    ]
+
+
+2) this is the api to get the product tree of the selected neutral parameter from previous api dropdown
+http://localhost:5203/neutral-parameters/112/productree
+
+@GetMapping("/{id}/productree")
+    public PhysicalParametersProductreeResponseDto getPhysicalParameterWithSubsections(@PathVariable int id) {
+        return physicalParameterService.getPhysicalParameterWithSubsections(id);
+    }
+
+{
+    "id": 3,
+    "parentNeutralParameterIds": [],
+    "storeName": "SUT",
+    "subsections": [
+        {
+            "id": 36,
+            "parentNeutralParameterIds": [
+                3
+            ],
+            "storeName": "Excess pressure valve ",
+            "subsections": [
+                {
+                    "id": 431,
+                    "parentNeutralParameterIds": [
+                        36,
+                        34,
+                        35
+                    ],
+                    "storeName": "store12_demo",
+                    "subsections": []
+                },
+                {
+                    "id": 433,
+                    "parentNeutralParameterIds": [
+                        36,
+                        35
+                    ],
+                    "storeName": "store12_demo3",
+                    "subsections": []
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "parentNeutralParameterIds": [
+                3
+            ],
+            "storeName": "Megohmmeter",
+            "subsections": []
+        },
+        {
+            "id": 32,
+            "parentNeutralParameterIds": [
+                3
+            ],
+            "storeName": "Elavi",
+            "subsections": []
+        },
+        {
+            "id": 33,
+            "parentNeutralParameterIds": [
+                3
+            ],
+            "storeName": "Cycle",
+            "subsections": []
+        },
+        {
+            "id": 28,
+            "parentNeutralParameterIds": [
+                3
+            ],
+            "storeName": "Casket",
+            "subsections": []
+        },
+        {
+            "id": 462,
+            "parentNeutralParameterIds": [
+                3
+            ],
+            "storeName": "BulkImportTestingTorpedo",
+            "subsections": [
+                {
+                    "id": 463,
+                    "parentNeutralParameterIds": [
+                        462
+                    ],
+                    "storeName": "BulkImpoMissie33er",
+                    "subsections": []
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "parentNeutralParameterIds": [
+                3
+            ],
+            "storeName": "Battery",
+            "subsections": []
+        },
+        {
+            "id": 29,
+            "parentNeutralParameterIds": [
+                3
+            ],
+            "storeName": "Warhed",
+            "subsections": []
+        },
+        {
+            "id": 30,
+            "parentNeutralParameterIds": [
+                3
+            ],
+            "storeName": "A- Cable",
+            "subsections": []
+        },
+        {
+            "id": 437,
+            "parentNeutralParameterIds": [
+                3
+            ],
+            "storeName": "BulkImportTestingTorpedo",
+            "subsections": []
+        },
+        {
+            "id": 281,
+            "parentNeutralParameterIds": [
+                3
+            ],
+            "storeName": "Rear Joint Ring",
+            "subsections": []
+        },
+        {
+            "id": 404,
+            "parentNeutralParameterIds": [
+                24,
+                3,
+                34
+            ],
+            "storeName": "Store 11 JUly",
+            "subsections": []
+        }
+    ]
+}
+
+after showing the all product tree content for each node i want to give and info button near to that node after clicking on that i will call one api and and show details of that node in a very usefull way 
+http://localhost:5203/neutral-parameters/ProductreeStoreData/463
+
+{
+    "id": 462,
+    "storeName": "BulkImportTestingTorpedo",
+    "parentNeutralParameterIds": [
+        3
+    ],
+    "parentNeutralParameterStoreNames": [
+        "SUT"
+    ],
+    "storeUid": "BulkImportTestingTorp33edo3we/DRW6627052025/35",
+    "picture": null,
+    "assetType": "Armament",
+    "indigenised": true,
+    "indigenousPartNo": "35",
+    "oemPartNo": "OEM26025",
+    "checklistRefNo": null,
+    "standardItem": "Standard",
+    "drawingNumber": "DRW6627052025",
+    "revisionNumber": 5,
+    "supplierName": "Beretta",
+    "specification": null,
+    "componentNameId": 3,
+    "componentName": "Rubber"
+}
+
+    @GetMapping("/ProductreeStoreData/{id}")
+    public ResponseEntity<NeutralParameterDataDto> getNeutralParameterProductTreeDataByIdVP(@PathVariable int id) {
+        NeutralParameterDataDto neutralParameter = neutralParameterService.getNeutralParameterProductTreeDataByIdVP(id);
+        if (neutralParameter != null) {
+            return ResponseEntity.ok(neutralParameter);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
+
